@@ -1,0 +1,34 @@
+src/*.exe
+src/bitcoinx2
+src/bitcoinx2d
+src/test_bitcoinx2
+.*.swp
+*.*~*
+*.bak
+*.rej
+*.orig
+*.o
+*.patch
+.bitcoinx2
+
+# Compilation and Qt preprocessor part
+*.qm
+Makefile
+bitcoinx2-qt
+BITCOINx2-Qt.app
+
+# Unit-tests
+Makefile.test
+bitcoinx2-qt_test
+
+# Resources cpp
+qrc_*.cpp
+
+# Qt creator
+*.pro.user
+
+# Mac specific
+.DS_Store
+build
+
+!src/leveldb*/Makefile

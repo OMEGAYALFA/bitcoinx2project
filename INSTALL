@@ -1,0 +1,9 @@
+Building BITCOINx2
+
+See doc/readme-qt.rst for instructions on building BITCOINx2-Qt,
+the intended-for-end-users, nice-graphical-interface, reference
+implementation of BITCOINx2.
+
+See doc/build-*.txt for instructions on building bitcoinx2d,
+the intended-for-services, no-graphical-interface, reference
+implementation of BITCOINx2.
