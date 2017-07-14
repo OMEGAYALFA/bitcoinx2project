@@ -35,7 +35,7 @@ CTxMemPool mempool;
 unsigned int nTransactionsUpdated = 0;
 
 map<uint256, CBlockIndex*> mapBlockIndex;
-uint256 hashGenesisBlock("0x4bfd6b656104916f99f196f8a054c5ccb1f988225543267696695fba2c91d9ee");
+uint256 hashGenesisBlock("0x9a51898fb0ade792dc04ece9c72fe5f7a965a1567526bd37ddfe217cd4abf4e8");
 static CBigNum bnProofOfWorkLimit(~uint256(0) >> 20); // BITCOINx2: starting difficulty is 1 / 2^12
 CBlockIndex* pindexGenesisBlock = NULL;
 int nBestHeight = -1;
@@ -2805,21 +2805,23 @@ bool InitBlockIndex() {
         block.hashPrevBlock = 0;
         block.hashMerkleRoot = block.BuildMerkleTree();
         block.nVersion = 1;
-        block.nTime    = 1485789905;
+        block.nTime    = 1500053400;
         block.nBits    = 0x1e0ffff0;
-        block.nNonce   = 2143359;
+        block.nNonce   = 356429;
 
         if (fTestNet)
         {
-            block.nTime    = 1485789905;
-            block.nNonce   = 2143359;
+            block.nTime    = 1500053401;
+            block.nNonce   = 356429;
         }
 
         //// debug print
         uint256 hash = block.GetHash();
-        printf("hash %s\n", hash.ToString().c_str());
-        printf("hashGenesisBlock %s\n", hashGenesisBlock.ToString().c_str());
-        printf("block m %s\n", block.hashMerkleRoot.ToString().c_str());
+           printf("1 block.nTime = %u \n", block.nTime);
+           printf("1 block.nNonce = %u \n", block.nNonce);
+           printf("1 block.nVersion = %u \n", block.nVersion);
+           printf("1 block.GetHash = %s\n", block.GetHash().ToString().c_str()); 
+           printf("1 block.hashMerkleRoot = %s \n", block.hashMerkleRoot.ToString().c_str()); 
 
         assert(block.hashMerkleRoot == uint256("0x9bb11ee1939c85a94a979ec1a0d8a8b0d0e04965a0853e1cdfa1e0a3dc1d3e04"));
         if (false && block.GetHash() != hashGenesisBlock)
@@ -2844,12 +2846,12 @@ bool InitBlockIndex() {
                     ++block.nTime;
                   }
                 }
-                    printf("block.GetHash() == %s\n", block.GetHash().ToString().c_str());
-                    printf("block.nTime = %u \n", block.nTime);
-                    printf("block.nNonce = %u \n", block.nNonce);
+           printf("2 block.nTime = %u \n", block.nTime);
+           printf("2 block.nNonce = %u \n", block.nNonce);
+           printf("2 block.nVersion = %u \n", block.nVersion);
+           printf("2 block.GetHash = %s\n", block.GetHash().ToString().c_str());
 
                     }
-        block.print();
         assert(hash == hashGenesisBlock);
 
 
